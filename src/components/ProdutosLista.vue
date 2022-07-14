@@ -10,11 +10,12 @@
           <p>{{produto.descricao}}</p>
         </router-link>
       </div>
-      <ProdutosPaginar :produtosTotal="produtosTotal" :produtosPorPagina="produtosPorPagina"/>
+      
     </div>
     <div v-else-if="produtos && produtos.length === 0">
       <p class="sem-resultados">Busca sem resultados. Tente buscar outro termo.</p>
     </div>
+    <ProdutosPaginar :produtosTotal="produtosTotal" :produtosPorPagina="produtosPorPagina"/>
   </section>
 </template>
 
@@ -31,7 +32,7 @@ export default {
   data() {
     return {
       produtos: null,
-      produtosPorPagina: 9,
+      produtosPorPagina: 2,
       produtosTotal: 0,
     };
   },

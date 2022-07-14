@@ -41,12 +41,14 @@ ul {
 
 body {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
-  color: #345;
-  background: url("./assets/pattern.svg") repeat top;
+  color: rgb(189, 192, 196);
+  background:  rgb(28, 73, 119);
+  
+  
 }
 
 a {
-  color: #345;
+  color: rgb(102, 106, 110);
   text-decoration: none;
 }
 
