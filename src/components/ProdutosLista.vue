@@ -1,21 +1,21 @@
 <template>
   <section class="produtos-container">
     {{produtosTotal}}
-    <div v-if="produtos && produtos.length > 0" class="produtos">
+    <div v-if="produtos && produtos.length > 0" class="produtos"> <!-- Se produtos existir e tiver mais de um produto, exibe os produtos -->
       <div class="produto" v-for="(produto, ind) in produtos" :key="ind">
-        <router-link to="/">
-          <img v-if="produto.fotos" :src="produto.fotos[0].src" :alt="produto.fotos[0].titulo">
-          <p class="preco">{{produto.preco}}</p>
+        <router-link to="/"> 
+          <img v-if="produto.fotos" :src="produto.fotos[0].src" :alt="produto.fotos[0].titulo"> <!-- v-if="produto.fotos" é um condicional que verifica se o produto tem fotos -->
+          <p class="preco">{{produto.preco}}</p> 
           <h2 class="titulo">{{produto.nome}}</h2>
           <p>{{produto.descricao}}</p>
         </router-link>
       </div>
       
     </div>
-    <div v-else-if="produtos && produtos.length === 0">
+    <div v-else-if="produtos && produtos.length === 0"> <!-- Se produtos existir e tiver apenas um produto, exibe o produto -->
       <p class="sem-resultados">Busca sem resultados. Tente buscar outro termo.</p>
     </div>
-    <ProdutosPaginar :produtosTotal="produtosTotal" :produtosPorPagina="produtosPorPagina"/>
+    <ProdutosPaginar :produtosTotal="produtosTotal" :produtosPorPagina="produtosPorPagina"/>  <!-- ProdutosPaginar é um componente que exibe a páginação dos produtos -->
   </section>
 </template>
 
@@ -26,8 +26,8 @@ import ProdutosPaginar from "@/components/ProdutosPaginar.vue";
 
 export default {
   name: "ProdutosLista",
-  components: {
-    ProdutosPaginar
+  components: { 
+    ProdutosPaginar 
   },
   data() {
     return {
@@ -37,27 +37,27 @@ export default {
     };
   },
   computed: {
-    url() {
-      const query = serialize(this.$route.query);
-      return `/produto?_limit=${this.produtosPorPagina}${query}`;
+    url() { //url é um computed quee retorna a url da API
+      const query = serialize(this.$route.query); //serialize é uma função que serializa o objeto query para uma string
+      return `/produto?_limit=${this.produtosPorPagina}${query}`; // concatena a url com o _limit e o query
     }
   },
   methods: {
-    getProdutos() {
+    getProdutos() { //getProdutos é um método que retorna os produtos da API e os armazena em produtos e produtosTotal 
       api.get(this.url).then(response => {
-        this.produtosTotal = Number(response.headers['x-total-count']);
+        this.produtosTotal = Number(response.headers['x-total-count']); 
         this.produtos = response.data;
         console.log(response)
       });
     }
   },
   watch: {
-    url() {
-      this.getProdutos();
+    url() { //url é um watcher que é chamado quando a url é alterada
+      this.getProdutos(); //chama o método getProdutos para atualizar os produtos da API 
     }
   },
-  created() {
-    this.getProdutos();
+  created() {  
+    this.getProdutos(); //getProdutos é chamado quando o componente é criado
   }
 };
 </script>

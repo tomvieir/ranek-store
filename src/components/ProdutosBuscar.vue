@@ -1,7 +1,7 @@
 <template>
     <form action="">
-        <input name="busca" id="busca" type="text" placeholder="Buscar produto" v-model="busca">
-        <input type="submit" id="lupa" value="Buscar" @click.prevent="buscarProdutos">
+        <input name="busca" id="busca" type="text" placeholder="Buscar produto" v-model="busca"> <!-- Busca é um input que será usado para buscar produtos -->
+        <input type="submit" id="lupa" value="Buscar" @click.prevent="buscarProdutos"> <!-- @click.prevent="buscarProdutos" é um evento que impede que o formulário seja enviado -->
     </form>
 
 </template>
@@ -10,14 +10,14 @@
 export default {
    data() {
       return {
-         busca: ""
+         busca: "" //busca é um data que armazena o valor do campo de busca
       }
    },
    methods: {
-    buscarProdutos() {
-        this.$router.push({
-            query: {
-                q: this.busca
+    buscarProdutos() { //buscarProdutos é um método que busca os produtos da API e redireciona para a página de produtos
+        this.$router.push({ //redireciona para a página de produtos
+            query: { //query é um objeto que armazena os parâmetros da URL
+                q: this.busca //q é um parâmetro que armazena o valor do campo de busca
             }
         });
     }
