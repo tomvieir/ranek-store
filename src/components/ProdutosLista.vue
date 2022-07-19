@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       produtos: null,
-      produtosPorPagina: 2,
+      produtosPorPagina: 5,
       produtosTotal: 0,
     };
   },
