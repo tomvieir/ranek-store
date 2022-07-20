@@ -92,7 +92,8 @@
       "preco": "1399",
       "vendido": "false",
       "descricao": "Esse é um novo tablet.",
-      "fotos": null
+      "fotos": null,
+      "cor": null
     },
     {
       "id": "notebook",
