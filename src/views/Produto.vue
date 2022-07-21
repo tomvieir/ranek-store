@@ -8,7 +8,7 @@
       </ul>
       <div class="info">
         <h1>{{produto.nome}}</h1>
-        <p class="preco">{{produto.preco}}</p>
+        <p class="preco">{{produto.preco | numeroPreco}}</p>
         <p class="descricao">{{produto.descricao}}</p>
         <button class="btn" v-if="produto.vendido === 'false'">Comprar</button>
         <button class="btn" v-else disabled>Produto Vendido</button>
@@ -48,7 +48,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .produto {
   display: grid;
   grid-template-columns: 1fr 1fr;
