@@ -11,7 +11,6 @@
       "estado": "RJ",
       "cidade": "Rio de Janeiro"
     },
-
     {
       "id": "joao@origamid.com",
       "email": "joao@origamid.com",
@@ -22,6 +21,30 @@
       "numero": "25",
       "estado": "RJ",
       "cidade": "Rio de Janeiro"
+    },
+    {
+      "id": "wevertonbvieira@gmail.com",
+      "nome": "WEVERTON BARBOSA VIEIRA",
+      "email": "wevertonbvieira@gmail.com",
+      "senha": "123",
+      "cep": "75053060",
+      "rua": "Rua JK-007",
+      "numero": "14",
+      "bairro": "Nova Vila Jaiara",
+      "cidade": "Anápolis",
+      "estado": "GO"
+    },
+    {
+      "id": "weverton@gmail.com",
+      "nome": "WevDev",
+      "email": "weverton@gmail.com",
+      "senha": "123",
+      "cep": "75.053-060",
+      "rua": "Rua JK-007",
+      "numero": "13",
+      "bairro": "Nova Vila Jaiara",
+      "cidade": "Anápolis",
+      "estado": "GO"
     }
   ],
   "produto": [

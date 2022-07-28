@@ -37,7 +37,7 @@ export default {
       produtosTotal: 0,
     };
   },
-  computed: {
+  computed: {  
     url() {
       //url é um computed quee retorna a url da API
       const query = serialize(this.$route.query); //serialize é uma função que serializa o objeto query para uma string

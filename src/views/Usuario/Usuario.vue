@@ -1,5 +1,5 @@
 <template>
-  <p>usuario</p>
+  <p>Página do Usuário: {{$store.state.usuario}}</p>
 </template>
 
 <script>
